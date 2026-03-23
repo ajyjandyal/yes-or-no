@@ -72,7 +72,7 @@ noBtn.addEventListener("touchstart", moveNoButton);
 // YES button
 yesBtn.addEventListener("click", () => {
   message.innerHTML =
-    "I knew it 😭❤️ You just made me the happiest person alive 💍💖";
+    "yayyyyyyy duduuuuuuu lesgooooooooo ";
 
   // Confetti
   for (let i = 0; i < 120; i++) {
