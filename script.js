@@ -1,17 +1,29 @@
-const noBtn = document.getElementById("noBtn");
-const yesBtn = document.getElementById("yesBtn");
-const message = document.getElementById("message");
+let score = 0;
+const heart = document.getElementById("heart");
+const scoreText = document.getElementById("score");
 
-// Move NO button when hovered
-noBtn.addEventListener("mouseover", () => {
-  const x = Math.random() * window.innerWidth;
-  const y = Math.random() * window.innerHeight;
+// Move heart randomly
+function moveHeart() {
+  const x = Math.random() * (window.innerWidth - 50);
+  const y = Math.random() * (window.innerHeight - 50);
 
-  noBtn.style.left = x + "px";
-  noBtn.style.top = y + "px";
+  heart.style.left = x + "px";
+  heart.style.top = y + "px";
+}
+
+// Click event
+heart.addEventListener("click", () => {
+  score++;
+  scoreText.innerText = score + " / 3";
+
+  if (score >= 3) {
+    // Move to proposal screen
+    document.getElementById("screenGame").classList.remove("active");
+    document.getElementById("screen4").classList.add("active");
+  } else {
+    moveHeart();
+  }
 });
 
-// YES button click
-yesBtn.addEventListener("click", () => {
-  message.innerText = "Yayyy! I love you too ❤️🥹";
-});
+// Start position
+moveHeart();
