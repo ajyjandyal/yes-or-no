@@ -3,6 +3,10 @@ const heart = document.getElementById("heart");
 const scoreText = document.getElementById("score");
 
 // Move heart randomly
+function goToGame() {
+  document.getElementById("screen3").classList.remove("active");
+  document.getElementById("screenGame").classList.add("active");
+}
 function moveHeart() {
   const x = Math.random() * (window.innerWidth - 50);
   const y = Math.random() * (window.innerHeight - 50);
