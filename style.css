@@ -1,36 +1,72 @@
 body {
-  text-align: center;
+  margin: 0;
   font-family: Arial, sans-serif;
-  background: #ffe6e6;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  text-align: center;
+  overflow: hidden;
 }
 
-.container {
-  margin-top: 100px;
+.screen {
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.screen.active {
+  display: flex;
+}
+
+h1 {
+  font-size: 28px;
+  padding: 10px;
 }
 
 button {
   padding: 12px 25px;
   font-size: 18px;
   margin: 10px;
-  cursor: pointer;
   border: none;
   border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 #yesBtn {
-  background-color: #ff4d6d;
+  background: #ff4d6d;
   color: white;
 }
 
 #noBtn {
-  background-color: #999;
+  background: gray;
   color: white;
   position: absolute;
 }
-  #heart {
+
+#heart {
   font-size: 40px;
   position: absolute;
   cursor: pointer;
-  transition: 0.2s;
 }
 
+/* Mobile optimization */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px 18px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #noBtn {
+    position: relative;
+  }
+}
